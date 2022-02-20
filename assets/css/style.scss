@@ -1,0 +1,117 @@
+// SASS Convert Color Function
+@function RGBa($color-name, $opacity: 1){
+    @return rgba($color-name, $opacity);
+}
+
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+
+$color-primary: var(--color-primary);
+$color-primary-rgb: var(--color-primary-rgb);
+$color-shadow: var(--color-shadow);
+$color-text: var(--color-text);
+$color-danger: var(--color-danger);
+$color-danger-rgb: var(--color-danger-rgb);
+$color-bg: var(--color-bg);
+$color-card: var(--color-card);
+$font-primary: var(--font-primary);
+$font-secondary: var(--font-secondary);
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap');
+
+:root{
+    --color-primary: #0d81ec;
+    --color-primary-rgb: #{hexToRGB(#0d81ec)};
+    --color-text: #f6f6f7;
+    --color-danger: #fa5353;
+    --color-danger-rgb: #{hexToRGB(#fa5353)};
+    --color-bg: #1a1b1f;
+    --color-card: #21232b;
+
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Jost', sans-serif;
+
+    font-size: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    color: $color-text;
+    background-color: $color-bg;
+    font-weight: 400;
+    padding: 1.5rem;
+}
+
+body,
+button{
+    font-family: $font-primary;
+}
+
+img{
+    object-fit: cover;
+    display: block;
+    max-width: 100%;
+}
+
+.primary-btn{
+    display: inline-block;
+    color: $color-text;
+    background-color: $color-primary;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 1em 1.5em;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.2em 0.5em RGBa($color-primary-rgb, 0.5);
+}
+
+.badge{
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0.3em 0.8em;
+    text-transform: uppercase;
+    border-radius: 0.8rem;
+    &--danger{
+        background-color: $color-danger;
+    }
+}
+
+.card{
+    background-color: $color-card;
+    width: 100%;
+    max-width: 79.5rem;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    &__header{
+        &__image{
+            max-height: 29rem;
+        }
+    }
+    &__title{
+        font-size: 2rem;
+        @media only screen and (min-width: 768px) {
+            font-size: 3rem;
+        }
+        font-weight: 500;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        &__break{
+            @media only screen and (min-width: 768px) {
+                display: block;
+            }
+        }
+    }
+}
