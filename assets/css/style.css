@@ -8,6 +8,7 @@
   --color-danger-rgb: 250, 83, 83;
   --color-bg: #1a1b1f;
   --color-card: #21232b;
+  --color-input: #2c2f3a;
   --font-primary: 'Poppins', sans-serif;
   --font-secondary: 'Jost', sans-serif;
   font-size: 10px;
@@ -47,7 +48,21 @@ img {
 }
 
 .primary-btn {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: var(--color-text);
   background-color: var(--color-primary);
   border: 0;
@@ -57,6 +72,7 @@ img {
   border-radius: 1.5rem;
   -webkit-box-shadow: 0 0.2em 0.5em rgba(var(--color-primary-rgb), 0.5);
           box-shadow: 0 0.2em 0.5em rgba(var(--color-primary-rgb), 0.5);
+  text-decoration: none;
 }
 
 .badge {
@@ -100,5 +116,33 @@ img {
   .card__title__break {
     display: block;
   }
+}
+
+.card__meta {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  max-width: 25rem;
+  min-height: 6.5rem;
+  padding: 0.5em;
+  border-radius: 1.5rem;
+  background-color: var(--color-input);
+}
+
+.card__meta__price {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 /*# sourceMappingURL=style.css.map */

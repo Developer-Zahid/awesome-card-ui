@@ -16,6 +16,7 @@ $color-danger: var(--color-danger);
 $color-danger-rgb: var(--color-danger-rgb);
 $color-bg: var(--color-bg);
 $color-card: var(--color-card);
+$color-input: var(--color-input);
 $font-primary: var(--font-primary);
 $font-secondary: var(--font-secondary);
 
@@ -30,6 +31,7 @@ $font-secondary: var(--font-secondary);
     --color-danger-rgb: #{hexToRGB(#fa5353)};
     --color-bg: #1a1b1f;
     --color-card: #21232b;
+    --color-input: #2c2f3a;
 
     --font-primary: 'Poppins', sans-serif;
     --font-secondary: 'Jost', sans-serif;
@@ -67,7 +69,9 @@ img{
 }
 
 .primary-btn{
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     color: $color-text;
     background-color: $color-primary;
     border: 0;
@@ -76,6 +80,7 @@ img{
     padding: 1em 1.5em;
     border-radius: 1.5rem;
     box-shadow: 0 0.2em 0.5em RGBa($color-primary-rgb, 0.5);
+    text-decoration: none;
 }
 
 .badge{
@@ -112,6 +117,22 @@ img{
             @media only screen and (min-width: 768px) {
                 display: block;
             }
+        }
+    }
+    &__meta{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 25rem;
+        min-height: 6.5rem;
+        padding: 0.5em;
+        border-radius: 1.5rem;
+        background-color: $color-input;
+        &__price{
+            align-self: center;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: hsl(from var(--color-primary) h s calc(l - 5%));
         }
     }
 }
